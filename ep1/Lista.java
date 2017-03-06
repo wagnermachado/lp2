@@ -1,4 +1,3 @@
-
 class No {
 		public
 
@@ -69,12 +68,13 @@ public class Lista {
 		void remover() {
 			No cursor = this.ultimo;
 			this.ultimo = cursor.ant;
+			this.ultimo.prox = null;
 			this.tam -= 1;
 		}
 
 		void pesquisa(int indice) {
 			No cursor = primeiro;
-			for (int i = 0; i < indice; i++) {
+			for (int i = 0; i < (indice-1); i++) {
 				cursor = cursor.prox;
 			}
 			System.out.println(cursor.retorno());
