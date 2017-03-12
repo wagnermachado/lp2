@@ -25,12 +25,18 @@ class Principal{
 		alunos.add(d);
 
 		Aluno e = new Aluno();
-		e.setNome("Jo√£o");
+		e.setNome("Jo„o");
 		e.setIdade(17);			
-		alunos.add(e);
+		alunos.add(e);	
+		
+		for (int i = 0; i < alunos.size(); i++) {
+			System.out.println(alunos.get(i).getNome() + " - " + aluno.get(i).getIdade());
+		}	
+
 		Collections.sort(alunos);
-		for(int i = 0; i < alunos.size(); i++){ 
-			System.out.println(alunos.get(i).getNome());	
+
+		for (int i = 0; i < alunos.size(); i++) {
+			System.out.println(alunos.get(i).getNome() + " - " + aluno.get(i).getIdade());
 		}	
 	}
 }
