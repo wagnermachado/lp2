@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 class Principal{
 	public static void main (String arg[]){
-		ArrayList<Aluno> alunos = new ArrayList<Aluno> ();
+		ArrayList<Aluno> alunos = new ArrayList<Aluno>();
 		Aluno a = new Aluno();
 		a.setNome("Wagner");
 		a.setIdade(17);
@@ -25,18 +25,15 @@ class Principal{
 		alunos.add(d);
 
 		Aluno e = new Aluno();
-		e.setNome("João");
+		e.setNome("Joao");
 		e.setIdade(17);			
 		alunos.add(e);	
 		
-		for (int i = 0; i < alunos.size(); i++) {
-			System.out.println(alunos.get(i).getNome() + " - " + aluno.get(i).getIdade());
-		}	
-
 		Collections.sort(alunos);
 
-		for (int i = 0; i < alunos.size(); i++) {
-			System.out.println(alunos.get(i).getNome() + " - " + aluno.get(i).getIdade());
+		for(int i = 0; i < 5; i++){
+                    System.out.println("Nome: " + alunos.get(i).getNome() + " / Idade: " + alunos.get(i).getIdade());
+
 		}	
 	}
 }
