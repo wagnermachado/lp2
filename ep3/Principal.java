@@ -1,82 +1,83 @@
-import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Comparator;
-class Principal{
-	public static void main (String arg[]){
-		ArrayList<Aluno> alunos = new ArrayList<Aluno>();
-		ArrayList<Nota> notas = new ArrayList<Nota>();
-		/*
-		Disciplina = f = new Disciplina;
-		f.setNome("LP2");
-		f.setProfessor("Herbert");
-		disciplina.add(f);
-		Disciplina = g = new Disciplina;
-		g.setNome("WEB");
-		g.setProfessor("Marcelo");
-		disciplina.add(g);
-		*/
-			
-		Nota a = new Nota();
-		a.setValor(9.5);
-		a.setAluno("Wagner");
-		a.setDisciplina("LP2");
-		notas.add(a);
-		Nota b = new Nota();
-		b.setValor(7.5);
-		b.setAluno("Wagner");
-		b.setDisciplina("Web");
-		notas.add(b);
-		
-		Nota c = new Nota();
-		c.setValor(8.5);
-		c.setAluno("Matheus");
-		c.setDisciplina("LP2");
-		notas.add(c);
-		Nota d = new Nota();
-		d.setValor(6.5);
-		d.setAluno("Matheus");
-		d.setDisciplina("Web");
-		notas.add(d);
+import java.util.Collections;
+public class Principal {
+	public static void main (String []v) {
+		ArrayList<Aluno> aluno = new ArrayList<Aluno>();
+		ArrayList<Nota> nota = new ArrayList<Nota>();
+		ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
+		Disciplina disciplina1 = new Disciplina();
+		Disciplina disciplina2 = new Disciplina();
 
-		Nota e = new Nota();
-		e.setValor(4.5);
-		e.setAluno("Elyas");
-		e.setDisciplina("LP2");
-		notas.add(e);
-		Nota f = new Nota();
-		f.setValor(6.5);
-		f.setAluno("Elyas");
-		f.setDisciplina("WEB");
-		notas.add(f);
-	
-		Nota g = new Nota();
-		g.setValor(10);
-		g.setAluno("Agnaldo");
-		g.setDisciplina("LP2");
-		notas.add(g);	
-		Nota h = new Nota();
-		h.setValor(4);
-		h.setAluno("Agnaldo");
-		h.setDisciplina("WEB");
-		notas.add(h);
-	
-		Nota i = new Nota();
-		i.setValor(5);
-		i.setAluno("Rodrigo");
-		i.setDisciplina("LP2");
-		notas.add(i);
-		Nota j = new Nota();
-		j.setValor(9);
-		j.setAluno("Rodrigo");
-		j.setDisciplina("WEB");
-		notas.add(j);
-				
-		Collections.sort(notas);
+		Aluno a = new Aluno();
+		a.setAluno("Wagner", 17); 
+		aluno.add(a);
+		Aluno b = new Aluno();
+		b.setAluno("Agnaldo", 19);
+		aluno.add(b);
+		Aluno c = new Aluno();
+		c.setAluno("Maria", 20);
+		aluno.add(c);
+		Aluno d = new Aluno();
+		d.setAluno("Joao", 17);
+		aluno.add(d);
+		Aluno e = new Aluno();
+		e.setAluno("Matheus", 18);
+		aluno.add(e);
 		
-		for(int i = 0; i < 5; i++){
-			if(i==4){			
-			System.out.println("Maior  nota -- > Nome " + notas.get(i).getNome() + " / Nota: " + notas.get(i).getNota());
+		disciplina1.setDisciplina("LP2", "Herbert Fernandes");
+		disciplina.add(disciplina1);
+		disciplina2.setDisciplina("WEB", "Marcelo Mussel");
+		disciplina.add(disciplina2);
+
+		Nota nota1 = new Nota();
+		nota1.setNota(8, a, disciplina1);
+		nota.add(nota1);
+		Nota nota2 = new Nota();
+		nota2.setNota(9, a, disciplina2);
+		nota.add(nota2);
+		Nota nota3 = new Nota();
+		nota3.setNota(9.0, b, disciplina1);
+		nota.add(nota3);
+		Nota nota4 = new Nota();
+		nota4.setNota(2, b, disciplina2);
+		nota.add(nota4);
+		Nota nota5 = new Nota();
+		nota5.setNota(8, c, disciplina1);
+		nota.add(nota5);
+		Nota nota6 = new Nota();
+		nota6.setNota(6, c, disciplina2);
+		nota.add(nota6);
+		Nota nota7 = new Nota();
+		nota7.setNota(5, d, disciplina1);
+		nota.add(nota7);
+		Nota nota8 = new Nota();
+		nota8.setNota(2, d, disciplina2);
+		nota.add(nota8);
+		Nota nota9 = new Nota();
+		nota9.setNota(9.5, e, disciplina1);
+		nota.add(nota9);
+		Nota nota10 = new Nota();
+		nota10.setNota(5.5, e, disciplina2);
+		nota.add(nota10);
+
+		for (int i = 0; i < aluno.size(); i++) {
+			System.out.println(aluno.get(i).getNome() + " - " + aluno.get(i).getIdade());
 		}	
-		 
+
+		Collections.sort(nota);
+		
+		System.out.println(nota.get(0).getAluno().getNome()+" " +nota.get(0).getNota()+" "+nota.get(0).getDisciplina().getNome());
+		
+		int aux=2;
+		int i=0;
+		while (aux!=0){
+			if(nota.get(i).getDisciplina().getNome().compareTo("LP2") == 0){
+				System.out.println(nota.get(i).getAluno().getNome()+" "+nota.get(i).getNota());
+				aux=0;
+			}
+			i++;
+		}
+		
 	}
 }

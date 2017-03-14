@@ -1,26 +1,33 @@
-class Aluno implements Comparable<Aluno>{
-	private String nome;
-	private int idade;
-	public void setIdade(int idade){
-		this.idade = idade;
-	}	
-	public int getIdade(){
-		return this.idade;
-	}	
+public class Aluno implements Comparable<Aluno> {
 
-	public void setNome(String nome){
-		this.nome = nome;
-	}
-	public String getNome(){
-		return this.nome;
+	public
 
-	}
-	public int compareTo(Aluno outro){
-		if(this.idade < outro.getIdade())
-			return -1;
-		else if(this.idade > outro.getIdade())
-			return 1;
-		else
-			return 0;
-	}
+		void setAluno (String name, int age) {
+			this.nome = name;
+			this.idade = age;
+		}
+
+		String getNome(){
+			return this.nome;
+		}
+
+		int getIdade(){
+			return this.idade;
+		}
+
+		public int compareTo(Aluno aluno) {
+      	  if(this.idade < aluno.idade){
+            return -1;
+        	  }
+        	else if(this.idade > aluno.idade){
+            return 1;
+        		}
+        return this.getNome().compareToIgnoreCase(aluno.getNome());
+   	 }
+
+	private
+
+		String nome;
+		int idade;
+
 }
